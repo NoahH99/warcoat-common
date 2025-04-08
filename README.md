@@ -8,7 +8,7 @@ Add this library as a dependency in your Gradle project:
 
 ```kotlin
 dependencies {
-    implementation("com.noahhendrickson:warcoat-common:1.0-SNAPSHOT")
+    implementation("com.noahhendrickson:warcoat-common:0.1.0-alpha.1")
 }
 ```
 
