@@ -1,10 +1,13 @@
 package com.noahhendrickson.warcoat.common.model.guild;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.time.Instant;
 import java.util.Objects;
 
 public class Role {
 
+    @JsonBackReference("guild-roles")
     private Guild guild;
 
     private String id;
@@ -17,13 +20,12 @@ public class Role {
     private String permissions;
     private boolean managed;
     private boolean mentionable;
-    private int flags;
     private Instant lastUpdatedAt;
 
     public Role() {
     }
 
-    public Role(Guild guild, String id, String name, int color, boolean hoist, String iconUrl, String unicodeEmoji, int position, String permissions, boolean managed, boolean mentionable, int flags, Instant lastUpdatedAt) {
+    public Role(Guild guild, String id, String name, int color, boolean hoist, String iconUrl, String unicodeEmoji, int position, String permissions, boolean managed, boolean mentionable, Instant lastUpdatedAt) {
         this.guild = guild;
         this.id = id;
         this.name = name;
@@ -35,7 +37,6 @@ public class Role {
         this.permissions = permissions;
         this.managed = managed;
         this.mentionable = mentionable;
-        this.flags = flags;
         this.lastUpdatedAt = lastUpdatedAt;
     }
 
@@ -125,14 +126,6 @@ public class Role {
 
     public void setMentionable(boolean mentionable) {
         this.mentionable = mentionable;
-    }
-
-    public int getFlags() {
-        return flags;
-    }
-
-    public void setFlags(int flags) {
-        this.flags = flags;
     }
 
     public Instant getLastUpdatedAt() {

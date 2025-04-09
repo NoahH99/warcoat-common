@@ -1,5 +1,6 @@
 package com.noahhendrickson.warcoat.common.model.user;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.noahhendrickson.warcoat.common.model.guild.Guild;
 import com.noahhendrickson.warcoat.common.model.guild.Role;
 
@@ -13,8 +14,6 @@ public class Member {
     private User user;
 
     private String nickname;
-    private String avatarUrl;
-    private String bannerUrl;
 
     private List<Role> roles;
 
@@ -28,12 +27,10 @@ public class Member {
     public Member() {
     }
 
-    public Member(Guild guild, User user, String nickname, String avatarUrl, String bannerUrl, List<Role> roles, Instant joinedAt, Instant premiumSince, int flags, boolean pending, String permissions, Instant lastUpdatedAt) {
+    public Member(Guild guild, User user, String nickname, List<Role> roles, Instant joinedAt, Instant premiumSince, int flags, boolean pending, String permissions, Instant lastUpdatedAt) {
         this.guild = guild;
         this.user = user;
         this.nickname = nickname;
-        this.avatarUrl = avatarUrl;
-        this.bannerUrl = bannerUrl;
         this.roles = roles;
         this.joinedAt = joinedAt;
         this.premiumSince = premiumSince;
@@ -65,22 +62,6 @@ public class Member {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
-    public String getBannerUrl() {
-        return bannerUrl;
-    }
-
-    public void setBannerUrl(String bannerUrl) {
-        this.bannerUrl = bannerUrl;
     }
 
     public List<Role> getRoles() {

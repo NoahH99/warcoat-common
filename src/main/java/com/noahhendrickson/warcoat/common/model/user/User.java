@@ -12,20 +12,16 @@ public class User {
     private String avatarUrl;
     private boolean bot;
     private boolean system;
-    private int bannerUrl;
+    private String bannerUrl;
     private int accentColor;
-    private boolean verified;
-    private String email;
     private int flags;
-    private int premiumType;
-    private int publicFlags;
     private Instant createdAt;
     private Instant lastUpdatedAt;
 
     public User() {
     }
 
-    public User(String id, String username, String discriminator, String globalName, String avatarUrl, boolean bot, boolean system, int bannerUrl, int accentColor, boolean verified, String email, int flags, int premiumType, int publicFlags, Instant createdAt, Instant lastUpdatedAt) {
+    public User(String id, String username, String discriminator, String globalName, String avatarUrl, boolean bot, boolean system, String bannerUrl, int accentColor, int flags, Instant createdAt, Instant lastUpdatedAt) {
         this.id = id;
         this.username = username;
         this.discriminator = discriminator;
@@ -35,11 +31,7 @@ public class User {
         this.system = system;
         this.bannerUrl = bannerUrl;
         this.accentColor = accentColor;
-        this.verified = verified;
-        this.email = email;
         this.flags = flags;
-        this.premiumType = premiumType;
-        this.publicFlags = publicFlags;
         this.createdAt = createdAt;
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -100,11 +92,11 @@ public class User {
         this.system = system;
     }
 
-    public int getBannerUrl() {
+    public String getBannerUrl() {
         return bannerUrl;
     }
 
-    public void setBannerUrl(int bannerUrl) {
+    public void setBannerUrl(String bannerUrl) {
         this.bannerUrl = bannerUrl;
     }
 
@@ -116,44 +108,12 @@ public class User {
         this.accentColor = accentColor;
     }
 
-    public boolean isVerified() {
-        return verified;
-    }
-
-    public void setVerified(boolean verified) {
-        this.verified = verified;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public int getFlags() {
         return flags;
     }
 
     public void setFlags(int flags) {
         this.flags = flags;
-    }
-
-    public int getPremiumType() {
-        return premiumType;
-    }
-
-    public void setPremiumType(int premiumType) {
-        this.premiumType = premiumType;
-    }
-
-    public int getPublicFlags() {
-        return publicFlags;
-    }
-
-    public void setPublicFlags(int publicFlags) {
-        this.publicFlags = publicFlags;
     }
 
     public Instant getCreatedAt() {

@@ -1,5 +1,7 @@
 package com.noahhendrickson.warcoat.common.model.guild;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.time.Instant;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +17,7 @@ public class Guild {
     private String vanityUrlCode;
     private int verificationLevel;
 
+    @JsonManagedReference("guild-roles")
     private List<Role> roles;
 
     private int premiumTier;
